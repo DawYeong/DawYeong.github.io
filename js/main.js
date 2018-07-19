@@ -86,11 +86,10 @@ function displayKeys(evt){
     if(document.getElementById("demo").value === "Benny is the Legend Himself") {
       alert("Congratulations, you are either Benny or a legend to know this password.");
       if(confirm("Click ok to enter to the nether realm.")) {
-      window.location.href = "https://www.youtube.com/";
+      window.location.href = "https://www.youtube.com/channel/UCC1aXoLn8zzqalZXd58xMQw";
       } else {
         alert("WOW. I thought you were cool but I guess we have a chicken on our hands.");
       }
-
     }
   } else {
     document.getElementById("demo").style.backgroundColor = "white";
