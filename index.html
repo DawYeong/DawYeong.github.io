@@ -19,18 +19,18 @@
 
   <!-- Add your site or application content here -->
 
-  <body>
-  <section>
-    <ul>
-      <li><a class = "active" href = "index.html">Home</a></li>
-      <li class = "dropdown">
-        <a href = "https://www.youtube.com/channel/UCC1aXoLn8zzqalZXd58xMQw">Series of Unfortunate Events</a>
-        <div class = "dropdown-content">
+    <div class="navbar">
+      <a href = "index.html">Home</a>
+      <div class = "dropdown">
+        <button class = "dropbtn" onclick = "myFunction()">Series of Unfortunate Events</button>
+        <div class = "dropdown-content" id = "myDropdown">
           <a href = "https://www.youtube.com/watch?v=Te4VzNLCyEo">Oh God</a>
           <a href = "https://www.youtube.com/watch?v=aD4ZZagbHT0">Please Stop This</a>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
+
+
   <h1 style="Font-family:Calibri; Font-size:40px; color:white">
     Welcome To The Website of The Legend Himself
   </h1>
@@ -38,18 +38,18 @@
       Hello there, the Legend Himself here, I am very proud to present this website to you humans.
       <br>I hope you guys enjoy your time here!
     </p>
-  </section>
+  <canvas id="gc" width ="400px" height="400px"></canvas>
+  <input type = "text" id ="demo">
+  <p class = "score" id = "score"></p>
 
 
 
   <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
   <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+  <script src = "js/dropdown.js"></script>
   <script src="js/plugins.js"></script>
-  <canvas id="gc" width ="400" height="400"></canvas>
-  <input type = "text" id ="demo">
   <script src="js/main.js"></script>
-  </body>
 
 </body>
 

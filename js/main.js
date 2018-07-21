@@ -5,77 +5,90 @@ window.onload = function() {
   document.addEventListener("keyup", displayKeys);
   setInterval(game, 1000/15);
 }
-px=py = 10;
-gs = tc = 20;
-ax = ay = 15;
-xv= yv =0;
+
+let headX = 10, headY = 10, gameScreen = tc = 20, appleX = appleY = 15, nDir = 0, tail = 5, score = 0;
 trail = [];
-tail = 5;
-isEnter = false;
-let nDir = 0;
-// 1 - right, 2 - left, 3 - up, 4 - down
+
 function game() {
-  px += xv;
-  py += yv;
-  if(px < 0) {
-    px = tc;
+  switch(nDir) {
+    case 1:
+      headX++;
+      break;
+    case 2:
+      headX--;
+      break;
+    case 3:
+      headY++;
+      break;
+    case 4:
+      headY--;
+      break;
   }
-  if(px > tc) {
-    px = 0;
+    if(headX < 0) {
+    headX = tc - 1;
   }
-  if(py < 0) {
-    py = tc;
+  if(headX > tc - 1) {
+    headX = 0;
   }
-  if(py >tc) {
-    py = 0;
+  if(headY < 0) {
+    headY = tc - 1;
   }
-  ctx.fillStyle ="white";
+  if(headY >tc - 1) {
+    headY = 0;
+  }
+
+  ctx.fillStyle = "white";
   ctx.fillRect(0,0, canv.width, canv.height);
 
-  ctx.fillStyle ="lime";
-  for(var i = 0 ; i < trail.length; i ++) {
-    ctx.fillRect(trail[i].x * gs, trail[i].y * gs, gs -2, gs-2);
-    if(trail[i].x === px && trail[i].x === py) {
+  ctx.fillStyle = "lime";
+  for(let i = 0; i < trail.length; i++) {
+    ctx.fillRect(trail[i].x * gameScreen, trail[i].y * gameScreen, gameScreen - 2, gameScreen - 2);
+    if(trail[i].x === headX && trail[i].y === headY) {
+      console.log("hit");
       tail = 5;
+      score = 0;
     }
   }
-  trail.push({x:px, y:py});
+  document.getElementById("score").innerHTML = "Score: " + score;
+
+  trail.push({x:headX, y:headY});
   while(trail.length > tail) {
     trail.shift();
   }
 
-  if(ax === px && ay === py) {
+  ctx.fillStyle = "red";
+  ctx.fillRect(appleX * gameScreen, appleY * gameScreen, gameScreen - 2, gameScreen - 2);
+
+  if(appleX === headX && appleY === headY) {
     tail++;
-    ax = Math.floor(Math.random() * tc);
-    ay = Math.floor(Math.random() * tc);
+    score++;
+    appleX = Math.floor(Math.random() * gameScreen);
+    appleY = Math.floor(Math.random() * gameScreen);
   }
-  ctx.fillStyle ="red";
-  ctx.fillRect(ax*gs, ay*gs, gs-2, gs-2);
 }
 function keyPush(evt) {
   switch (true){
     case (evt.keyCode === 37 && nDir !== 1):
       nDir = 2;
-      xv = -1, yv = 0;
       console.log("Left");
       break;
     case (evt.keyCode === 38 && nDir !== 3):
       nDir = 4;
-      xv = 0, yv = -1;
       console.log("Down");
       break;
     case (evt.keyCode === 39 && nDir !== 2):
       nDir = 1;
-      xv = 1, yv = 0;
       console.log("Right");
       break;
     case (evt.keyCode === 40 && nDir !==4):
       nDir = 3;
-      xv = 0, yv = 1;
       console.log("Up");
       break;
   }
 }
+
+
+isEnter = false;
 function displayKeys(evt){
   if(evt.keyCode === 13) {
     isEnter = !isEnter;
