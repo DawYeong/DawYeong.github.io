@@ -6,7 +6,7 @@ window.onload = function() {
   setInterval(game, 1000/15);
 }
 
-let headX = 10, headY = 10, gameScreen = tc = 20, appleX = appleY = 15, nDir = 0, tail = 5, score = 0;
+let headX = 10, headY = 10, gameScreen = tc = 20, appleX = appleY = 15, nDir = 0, tail = 5, score = 0, highScore = 0;
 trail = [];
 
 function game() {
@@ -46,10 +46,14 @@ function game() {
     if(trail[i].x === headX && trail[i].y === headY) {
       console.log("hit");
       tail = 5;
+      if(score > highScore) {
+        highScore = score;
+      }
       score = 0;
     }
   }
-  document.getElementById("score").innerHTML = "Score: " + score;
+
+  document.getElementById("score").innerHTML = "High Score: " + highScore + "     Score: " + score;
 
   trail.push({x:headX, y:headY});
   while(trail.length > tail) {

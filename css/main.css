@@ -48,6 +48,10 @@ body {
   background-size: cover;
 }
 
+form {
+  color: white;
+}
+
 .score {
   color: white;
   font-size: 18px;
