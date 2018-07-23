@@ -5,22 +5,22 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>The Legend Himself</title>
+  <link rel="stylesheet" href="css/main.css">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel ="shortcut icon" href ="LilGod.jpg" type = "image/jpg">
 </head>
 
-<body>
+<body class = "homepage">
 
   <!-- Add your site or application content here -->
-
     <div class="navbar">
-      <a href = "index.html">Home</a>
+      <a  class = "active" href = "index.html">Home</a>
+      <a href = "parallax.html">Parallax</a>
       <div class = "dropdown">
         <button class = "dropbtn" onclick = "myFunction()">Series of Unfortunate Events</button>
         <div class = "dropdown-content" id = "myDropdown">
@@ -35,10 +35,10 @@
     Welcome To The Website of The Legend Himself
   </h1>
     <p style="Font-family:'Times New Roman'; Font-size:14px; color:white">
-      Hello there, the Legend Himself here, I am very proud to present this website to you humans.
+      Hello there, this is a test website I am creating for the sole reasoning to learning a little bit of HTML, CSS, and JS.
       <br>I hope you guys enjoy your time here!
     </p>
-  <form>
+  <form onsubmit="return false;">
     Enter Secret Password:<input type = "text" id ="demo">
   </form>
   <canvas id="gc" width ="400px" height="400px"></canvas>
@@ -46,9 +46,6 @@
 
 
 
-  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
-  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
   <script src = "js/dropdown.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>

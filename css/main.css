@@ -43,13 +43,35 @@ hr {
 }
 body {
   text-align: center;
+  margin: 0px;
+}
+
+form {
+  color: white;
+}
+.homepage {
   background-image: url("sky.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-form {
-  color: white;
+.parallax {
+  background-image: url("ocean.jpg");
+  min-height: 700px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallaxPage-section1 {
+  background: orange;
+  min-height: 400px;
+}
+
+.active {
+  background-color: green;
+  color: black;
 }
 
 .score {
@@ -61,6 +83,7 @@ form {
 .navbar{
   overflow:hidden;
   background-color: transparent;
+  position: fixed;
 }
 
 .navbar a {
@@ -70,6 +93,7 @@ form {
   text-align: center;
   padding: 12px 16px;
   text-decoration: none;
+  -webkit-transition: all .3s ease-in;
 }
 
 .dropdown {

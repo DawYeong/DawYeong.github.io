@@ -92,7 +92,7 @@ function keyPush(evt) {
 }
 
 
-isEnter = false;
+var isEnter = false;
 function displayKeys(evt){
   if(evt.keyCode === 13) {
     isEnter = !isEnter;
