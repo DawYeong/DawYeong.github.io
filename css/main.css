@@ -83,7 +83,6 @@ form {
 .navbar{
   overflow:hidden;
   background-color: transparent;
-  position: fixed;
 }
 
 .navbar a {
