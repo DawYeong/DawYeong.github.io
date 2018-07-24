@@ -49,6 +49,30 @@ body {
 form {
   color: white;
 }
+
+.container {
+  width: 1600px;
+  height: 600px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallaxHeader {
+  font-size: 100px;
+  font-family: fantasy;
+  color: rgba(60, 63, 68, 1);
+  text-shadow: 2px 2px white;
+}
+
+.parallaxSubHeader {
+  color: rgba(255, 255,255, 0.8);
+  font-size: 50px;
+  font-family: fantasy;
+  text-shadow: 2px 2px black;
+}
+
 .homepage {
   background-image: url("sky.png");
   background-repeat: no-repeat;
@@ -65,8 +89,8 @@ form {
 }
 
 .parallaxPage-section1 {
-  background: orange;
-  min-height: 400px;
+  background: lightcoral;
+  min-height: 700px;
 }
 
 .active {
@@ -80,12 +104,12 @@ form {
   text-align: center;
 }
 
-.navbar{
+.navbarHome{
   overflow:hidden;
   background-color: transparent;
 }
 
-.navbar a {
+.navbarHome a {
   float: left;
   font-size: 16px;
   color: white;
@@ -93,6 +117,28 @@ form {
   padding: 12px 16px;
   text-decoration: none;
   -webkit-transition: all .3s ease-in;
+}
+
+.navbarPar {
+  overflow: hidden;
+  background-color: transparent;
+  position: fixed;
+}
+
+.navbarPar a{
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  -webkit-transition: all .3s ease-in;
+}
+
+.scrollDown {
+  overflow: hidden;
+  background-color: rgba(96, 96, 96, 0.8);
+  position: fixed;
 }
 
 .dropdown {
@@ -112,13 +158,32 @@ form {
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover, .dropbtn, .dropbtn:focus {
+.parallaxButton {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 4px 16px;
+  background-color: black;
+  text-decoration: none;
+  font-family: "Courier New";
+  margin: 0;
+}
+
+.parallaxButton:hover {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+  outline: 1px solid black;
+}
+
+.navbarHome a:hover, .navbarPar a:hover, .dropdown:hover, .dropbtn, .dropbtn:focus {
   background-color: lightgray;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: lightgray;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
