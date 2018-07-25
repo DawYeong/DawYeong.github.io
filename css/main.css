@@ -51,12 +51,13 @@ form {
 }
 
 .container {
-  width: 1600px;
-  height: 600px;
+  height: 90%;
+  width: 100%;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 .parallaxHeader {
@@ -81,7 +82,7 @@ form {
 
 .parallax {
   background-image: url("ocean.jpg");
-  min-height: 700px;
+  height: 700px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -90,8 +91,17 @@ form {
 
 .parallaxPage-section1 {
   background: lightcoral;
-  min-height: 700px;
+  height: 700px;
 }
+
+.section1-Header {
+  font-size: 40px;
+  font-family: "Brush Script MT";
+  color: rgba(29, 29, 30, 1);
+  font-weight: bold;
+  border-bottom: 4px solid rgba(47, 47, 48, 1);
+}
+
 
 .active {
   background-color: green;
