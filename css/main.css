@@ -114,12 +114,27 @@ form {
   text-align: center;
 }
 
+.navbarP5 {
+  overflow: hidden;
+  background-color: rgba(66, 67, 68, 1);
+}
+
 .navbarHome{
   overflow:hidden;
   background-color: transparent;
 }
 
 .navbarHome a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  -webkit-transition: all .3s ease-in;
+}
+
+.navbarP5 a{
   float: left;
   font-size: 16px;
   color: white;
@@ -187,7 +202,8 @@ form {
   outline: 1px solid black;
 }
 
-.navbarHome a:hover, .navbarPar a:hover, .dropdown:hover, .dropbtn, .dropbtn:focus {
+.navbarHome a:hover, .navbarPar a:hover, .navbarP5 a:hover,
+.dropdown:hover, .dropbtn, .dropbtn:focus {
   background-color: lightgray;
 }
 
