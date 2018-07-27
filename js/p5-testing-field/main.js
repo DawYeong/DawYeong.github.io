@@ -14,6 +14,7 @@ function setup() {
 function draw() {
   background(100, 200, 210);
   if(isStart) {
+    fill(249, 172, 57);
   ellipse(playerPosition.x, playerPosition.y, fRad);
   move();
   bulletSpawn();
@@ -27,15 +28,28 @@ function draw() {
       nScore++;
       bullets.splice(i, 1);
     }
+    if(playerPosition.x - (fRad / 2) <= bullets[i].position.x + (bullets[i].bRad/2) &&
+    playerPosition.x + (fRad /2) >= bullets[i].position.x - (bullets[i].bRad/2) &&
+    playerPosition.y - (fRad /2) <= bullets[i].position.y + (bullets[i].bRad/2) &&
+    playerPosition.y + (fRad/2) >= bullets[i].position.y - (bullets[i].bRad/2)) {
+      isStart = false;
+      break;
+    }
   }
   text(10);
     textAlign(RIGHT, BOTTOM);
+    fill(255);
   text('Score: ' + nScore, width, height);
   } else {
+    bullets.splice(0, bullets.length);
+    playerPosition.x = width/2;
+    playerPosition.y = height/2;
+    nScore = 0;
     textSize(32);
     textAlign(CENTER);
-    text('Press Any Key To Start', width/2, height/2);
-    if(keyIsPressed === true) {
+    fill(255);
+    text('Press Space To Start', width/2, height/2);
+    if(keyIsPressed === true && keyCode === 32) {
       isStart = true;
     }
   }
@@ -120,6 +134,7 @@ function Bullet(tempPosition) {
   }
 
   this.display = function() {
+    fill(0);
     ellipse(this.position.x, this.position.y, this.bRad);
   }
 }
