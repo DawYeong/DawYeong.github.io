@@ -1,4 +1,5 @@
-var fRad, playerPosition, Timer = 0, isStart, nScore = 0;
+var fRad, playerPosition, Timer = 0, isStart, nScore = 0, nHighScore = 0, BulletSpeed = 3;
+var isSpeedChanged = false;
 var isTouchingWall = [4];
 var bullets = [];
 function setup() {
@@ -41,6 +42,9 @@ function draw() {
     fill(255);
   text('Score: ' + nScore, width, height);
   } else {
+    if(nScore > nHighScore) {
+      nHighScore = nScore;
+    }
     bullets.splice(0, bullets.length);
     playerPosition.x = width/2;
     playerPosition.y = height/2;
@@ -53,6 +57,10 @@ function draw() {
       isStart = true;
     }
   }
+  text(10);
+  textAlign(LEFT,BOTTOM);
+  fill(255);
+  text('High Score: ' + nHighScore, 0, height);
 }
 
 function move() {
@@ -101,15 +109,15 @@ function move() {
 function bulletSpawn() {
   Timer ++;
   if(Timer >= 100) {
-    bullets.push(new Bullet(playerPosition));
-    bullets.push(new Bullet(playerPosition));
-    bullets.push(new Bullet(playerPosition));
-    bullets.push(new Bullet(playerPosition));
+    bullets.push(new Bullet(playerPosition, BulletSpeed));
+    bullets.push(new Bullet(playerPosition, BulletSpeed));
+    bullets.push(new Bullet(playerPosition, BulletSpeed));
+    bullets.push(new Bullet(playerPosition, BulletSpeed));
     Timer = 0;
   }
 }
 
-function Bullet(tempPosition) {
+function Bullet(tempPosition, tempSpeed) {
   this.randomizer = Math.floor(random(0, 4));
   this.bRad = 20;
   switch(this.randomizer) {
@@ -127,7 +135,7 @@ function Bullet(tempPosition) {
       break;
   }
   this.direction = p5.Vector.sub(tempPosition, this.position);
-  this.direction.setMag(3);
+  this.direction.setMag(tempSpeed);
 
   this.move = function() {
     this.position.add(this.direction);
