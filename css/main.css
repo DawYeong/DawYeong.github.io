@@ -50,14 +50,77 @@ form {
   color: white;
 }
 
+.creditsHeader {
+  font-size: 40px;
+  font-family: "Julius Sans One";
+  color: white;
+  text-align: center;
+}
+
+.creditsParagraph {
+  font-size:23px;
+  font-family: "Julius Sans One";
+  color: white;
+  text-align: center;
+  padding: 2px 2px;
+}
+
+.creditsMargin{
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
 .container {
-  height: 90%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
 
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sliderAlignment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 450px;
+}
+
+.slider {
+  -webkit-appearance: slider-vertical;
+  margin-left: 30px;
+  width: 10px;
+  height: 30vh;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
 }
 
 .parallaxHeader {
@@ -92,6 +155,21 @@ form {
 .parallaxPage-section1 {
   background: lightcoral;
   height: 800px;
+}
+
+.parallaxPage-section2{
+  background: rgba(87, 190, 249, 1);
+  height: 800px;
+}
+
+.parallaxPage-credits{
+  background: rgba(94, 97, 102, 1);
+  height: 375px;
+}
+
+.video {
+  width: 60vw;
+  height: 60vh;
 }
 
 .section1-Header {
